@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --background-button: #2a9d8f;
+  --border-radius: 5px;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+ul {
+  list-style: none;
+}
+/* start slider container */
+main {
+  margin: 10px auto;
+  width: 400px;
+  height: 500px;
+  box-shadow: 0 0 5px #cdcdcd;
+}
+@media (max-width: 400px) {
+  main {
+    width: 100%;
+  }
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.slider-container img.active {
+  opacity: 1;
+}
+.slider-container .slide-number {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+  background-color: var(--background-button);
+  color: white;
+  user-select: none;
+  padding: 10px;
+  font-size: .75rem;
+  border-radius: var(--border-radius);
+}
+/* end slider container */
+/* start control */
+.slider-controls {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-controls .prev,
+.slider-controls .next {
+  background-color: var(--background-button);
+  color: white;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--border-radius);
+}
+.slider-controls .prev.disabled,
+.slider-controls .next.disabled {
+  background-color: var(--background-button);
+  opacity: .5;
+  cursor: no-drop;
+}
+/* start pagination style */
+.slider-controls .pagination {
+  width: 60%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-controls .pagination ul li {
+  display: inline-block;
+  background-color: #f6f6f6;
+  color: black;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  margin: 0 2px;
+}
+.slider-controls .pagination ul li.active {
+  background-color: var(--background-button);
+  color: white;
+}
+/* end pagination style */
+/* end control */
